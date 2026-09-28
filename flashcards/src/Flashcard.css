@@ -1,0 +1,29 @@
+.flashcardcon {
+    background-color: #ffffff; /* Fondo blanco limpio */
+    border: 1px solid #e5e7eb; /* Un borde más sutil y grisáceo */
+    padding: 40px;
+    border-radius: 16px; /* Esquinas más redondeadas y modernas */
+    width: 450px;
+    min-height: 160px; /* Asegura un buen espacio interno */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05); /* Sombra elegante */
+    cursor: pointer; /* Cambia el cursor a manito para indicar que se puede hacer clic */
+    transition: transform 0.2s ease, box-shadow 0.2s ease; /* Transición suave */
+}
+
+/* Efecto cuando pasas el mouse por encima de la tarjeta */
+.flashcardcon:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Estilo para el texto interno de la pregunta/respuesta */
+.flashcardcon p {
+    font-size: 24px;
+    color: #1f2937; /* Gris oscuro en lugar de negro puro para cuidar la vista */
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}

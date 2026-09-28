@@ -1,184 +1,76 @@
-.counter {
-  font-size: 16px;
-  padding: 5px 10px;
-  border-radius: 5px;
-  color: var(--accent);
-  background: var(--accent-bg);
-  border: 2px solid transparent;
-  transition: border-color 0.3s;
-  margin-bottom: 24px;
-
-  &:hover {
-    border-color: var(--accent-border);
-  }
-  &:focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-  }
-}
-
-.hero {
-  position: relative;
-
-  .base,
-  .framework,
-  .vite {
-    inset-inline: 0;
-    margin: 0 auto;
-  }
-
-  .base {
-    width: 170px;
-    position: relative;
-    z-index: 0;
-  }
-
-  .framework,
-  .vite {
-    position: absolute;
-  }
-
-  .framework {
-    z-index: 1;
-    top: 34px;
-    height: 28px;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(44deg) rotateY(39deg)
-      scale(1.4);
-  }
-
-  .vite {
-    z-index: 0;
-    top: 107px;
-    height: 26px;
-    width: auto;
-    transform: perspective(2000px) rotateZ(300deg) rotateX(40deg) rotateY(39deg)
-      scale(0.8);
-  }
-}
-
-#center {
-  display: flex;
-  flex-direction: column;
-  gap: 25px;
-  place-content: center;
-  place-items: center;
-  flex-grow: 1;
-
-  @media (max-width: 1024px) {
-    padding: 32px 20px 24px;
-    gap: 18px;
-  }
-}
-
-#next-steps {
-  display: flex;
-  border-top: 1px solid var(--border);
-  text-align: left;
-
-  & > div {
-    flex: 1 1 0;
-    padding: 32px;
-    @media (max-width: 1024px) {
-      padding: 24px 20px;
-    }
-  }
-
-  .icon {
-    margin-bottom: 16px;
-    width: 22px;
-    height: 22px;
-  }
-
-  @media (max-width: 1024px) {
-    flex-direction: column;
-    text-align: center;
-  }
-}
-
-#docs {
-  border-right: 1px solid var(--border);
-
-  @media (max-width: 1024px) {
-    border-right: none;
-    border-bottom: 1px solid var(--border);
-  }
-}
-
-#next-steps ul {
-  list-style: none;
-  padding: 0;
-  display: flex;
-  gap: 8px;
-  margin: 32px 0 0;
-
-  .logo {
-    height: 18px;
-  }
-
-  a {
-    color: var(--text-h);
-    font-size: 16px;
-    border-radius: 6px;
-    background: var(--social-bg);
+.App {
     display: flex;
-    padding: 6px 12px;
+    flex-direction: column;
     align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    transition: box-shadow 0.3s;
-
-    &:hover {
-      box-shadow: var(--shadow);
-    }
-    .button-icon {
-      height: 18px;
-      width: 18px;
-    }
-  }
-
-  @media (max-width: 1024px) {
-    margin-top: 20px;
-    flex-wrap: wrap;
     justify-content: center;
+    min-height: 100vh;
+    gap: 20px;
 
-    li {
-      flex: 1 1 calc(50% - 8px);
-    }
+    /* Propiedades para la imagen de fondo */
+    background-image: url('./assets/java-img.jpg'); /* Puede ser una URL de internet o una ruta local */
+    background-size: cover;      /* Hace que la imagen cubra toda la pantalla sin deformarse */
+    background-position: center; /* Centra la imagen */
+    background-repeat: no-repeat;/* Evita que la imagen se repita como mosaico */
 
-    a {
-      width: 100%;
-      justify-content: center;
-      box-sizing: border-box;
-    }
-  }
+    button {
+    background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%); /* Degradado moderno */
+    color: white;
+    border: none;
+    padding: 12px 28px;
+    border-radius: 12px;           /* Bordes más redondeados y modernos */
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(99, 102, 241, 0.4); /* Sombra con el mismo tono del botón */
+    transition: all 0.3s ease;     /* Transición fluida para todos los efectos */
 }
 
-#spacer {
-  height: 88px;
-  border-top: 1px solid var(--border);
-  @media (max-width: 1024px) {
-    height: 48px;
-  }
+/* Efecto cuando pasas el mouse por encima */
+button:hover {
+    background: linear-gradient(135deg, #4f46e5 0%, #4338ca 100%);
+    transform: translateY(-3px);   /* Se eleva un poco más */
+    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.6);
 }
 
-.ticks {
-  position: relative;
-  width: 100%;
+/* Efecto al hacer clic */
+button:active {
+    transform: translateY(-1px);
+    box-shadow: 0 2px 10px rgba(79, 70, 229, 0.4);
+}
 
-  &::before,
-  &::after {
-    content: '';
+
+}
+body {
+    margin: 0;        /* Elimina el margen blanco por defecto */
+    padding: 0;       /* Elimina el relleno por defecto */
+    box-sizing: border-box;
+}
+
+.App::before {
+    content: "";
     position: absolute;
-    top: -4.5px;
-    border: 5px solid transparent;
-  }
+    right: 5%;             /* La colocas hacia el lado derecho (en el espacio que marcaste) */
+    top: 30%;              /* Ajusta la altura vertical */
+    width: 120px;          /* Ancho de la imagen */
+    height: 90px;          /* Alto de la imagen */
+    background-image: url('./assets/react.svg'); /* Tu primera imagen */
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+   
+}
 
-  &::before {
-    left: 0;
-    border-left-color: var(--border);
-  }
-  &::after {
-    right: 0;
-    border-right-color: var(--border);
-  }
+/* 3. Creamos la segunda imagen debajo de la primera */
+.App::after {
+    content: "";
+    position: absolute;
+    right: 5%;             /* Mismo alineaiento a la derecha */
+    top: 55%;              /* Un poco más abajo que la anterior */
+    width: 120px;          /* Ancho de la segunda imagen */
+    height: 90px;          /* Alto de la segunda imagen */
+    background-image: url('./assets/vite.svg'); /* Tu segunda imagen */
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+  
 }
