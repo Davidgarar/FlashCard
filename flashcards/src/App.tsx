@@ -25,7 +25,7 @@ function App(){
     const [isflipped, setIsFlipped] = useState(false);
 
     //funcion logica para cambiar de carta
-    const handleflip = (id) => {
+    const handleflip = () => {
         setCurrentCardIndex((prevIndex) => (prevIndex + 1) % flashcardata.length);
         setIsFlipped(false);
     }
